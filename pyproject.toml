@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "django-shellcraft"
-version = "0.1.1"
+version = "0.1.2"
 description = "Rails-style console ergonomics for Django — pretty printing, model shortcuts, and schema inspection"
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -96,5 +96,8 @@ exclude_lines = [
 
 [tool.hatch.build.targets.wheel]
 packages = ["shellcraft"]
+
+[tool.hatch.build.targets.sdist]
+exclude = ["env/", "env"]
 
 [project.urls]
