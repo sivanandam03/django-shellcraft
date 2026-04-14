@@ -44,8 +44,8 @@ All shortcuts are injected as classmethods/instance methods at shell startup. Ra
 | `User.find(1)` | `User.objects.get(pk=1)` |
 | `User.all()` | `User.objects.all()` + pretty print |
 | `User.where(is_active=True)` | `User.objects.filter(...)` + pretty print |
-| `User.first()` | `User.objects.first()` |
-| `User.last()` | `User.objects.last()` |
+| `User.first()` | `User.objects.first()` + pretty print |
+| `User.last()` | `User.objects.last()` + pretty print |
 | `User.count()` | `User.objects.count()` |
 | `user.update(email="x@y.com")` | sets attrs + `save()` |
 | `user.destroy()` | `user.delete()` |

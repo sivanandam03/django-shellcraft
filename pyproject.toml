@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "django-shellcraft"
-version = "0.1.0"
+version = "0.1.1"
 description = "Rails-style console ergonomics for Django — pretty printing, model shortcuts, and schema inspection"
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -44,9 +44,10 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-  "pytest",
-  "pytest-django",
-  "ruff",
+  "pytest>=8.0",
+  "pytest-django>=4.8",
+  "pytest-cov>=5.0",
+  "ruff>=0.4",
 ]
 
 [tool.ruff]
@@ -72,10 +73,28 @@ select = [
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
+addopts = [
+  "--tb=short",
+  "--strict-markers",
+]
+
+[tool.coverage.run]
+source = ["shellcraft"]
+branch = true
+omit = ["shellcraft/__init__.py"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+fail_under = 85
+exclude_lines = [
+  "pragma: no cover",
+  "if use_ipython:",       # interactive shell branch — cannot run in CI
+  "IPython.start_ipython", # same
+  "code.interact",         # same
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["shellcraft"]
 
 [project.urls]
-# Homepage = "https://github.com/yourusername/django-shellcraft"
-# Issues = "https://github.com/yourusername/django-shellcraft/issues"
