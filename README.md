@@ -59,8 +59,8 @@ Single record:
 ```
 #<User:0x7f3a> {
     :id         => 1,
-    :username   => "siva",
-    :email      => "siva@example.com",
+    :username   => "alice",
+    :email      => "alice@example.com",
     :is_active  => true,
     :created_at => 2024-01-15 10:30:00,
 }
@@ -72,11 +72,11 @@ Multiple records:
 [
     [0] #<User:0x7f3a> {
             :id       => 1,
-            :username => "siva",
+            :username => "alice",
         },
     [1] #<User:0x7f3b> {
             :id       => 2,
-            :username => "kumar",
+            :username => "bob",
         }
 ]
 2 records
@@ -150,7 +150,7 @@ Optional: `ipython` for an enhanced shell experience.
 ## Development
 
 ```bash
-git clone https://github.com/yourusername/django-shellcraft
+git clone https://github.com/sivanandam03/django-shellcraft
 cd django-shellcraft
 pip install -e ".[dev]"
 pytest

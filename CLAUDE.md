@@ -60,7 +60,7 @@ Color mapping (ANSI, pure Python — zero dependencies):
 Single record output:
 #<User:0x001> {
     :id         => 1,
-    :username   => "siva",
+    :username   => "alice",
     :is_active  => true,
 }
 
@@ -68,11 +68,11 @@ Multiple records output:
 [
     [0] #<User:0x001> {
             :id       => 1,
-            :username => "siva",
+            :username => "alice",
         },
     [1] #<User:0x002> {
             :id       => 2,
-            :username => "kumar",
+            :username => "bob",
         }
 ]
 2 records
@@ -91,12 +91,12 @@ still shows Django default output. Intentional — predictable over magic.
 ## Current status
 - [x] pyproject.toml
 - [x] shellcraft/__init__.py
-- [ ] shellcraft/printer.py
-- [ ] shellcraft/mixins.py
-- [ ] shellcraft/management/commands/shellcraft.py
-- [ ] tests/test_printer.py
-- [ ] README.md
-- [ ] LICENSE
+- [x] shellcraft/printer.py
+- [x] shellcraft/mixins.py
+- [x] shellcraft/management/commands/shellcraft.py
+- [x] tests/test_printer.py
+- [x] README.md
+- [x] LICENSE
 
 ## Start here
 Begin with printer.py — everything else depends on it.
